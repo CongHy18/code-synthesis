@@ -149,9 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }
 
+</script>
 
-    # Mail
-    <!-- Send email -->
+# Mail
+<!-- Send email -->
 $subject = "Thư liên hệ từ " . $setting['name' . $lang];
 $message = str_replace($emailVars, $emailVals, $emailer->markdown('contact/admin'));
 if ($emailer->send("admin", null, $subject, $message, 'file_attach')) {
@@ -414,7 +415,7 @@ if (!empty($_POST['submit-newsletter2'])) {
 ?>
 
 
-</script>
+
 
 
 # Text-shadow
