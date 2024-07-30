@@ -116,3 +116,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+# Counter
+
+<script>
+    if (isExist($('#counter'))) {
+    var a = 0;
+    $(window).scroll(function() {
+        var oTop = $('#counter').offset().top - window.innerHeight;
+        if (a === 0 && $(window).scrollTop() > oTop) {
+            $('.counter-value').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({
+                    countNum: $this.text()
+                }).animate({
+                    countNum: countTo
+                },
+                {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                    }
+                });
+            });
+            a = 1;
+        }
+    });
+}
+
+</script>
+
+
+# Text-shadow
+text-shadow: 0px 0px 0 var(--color-main-v2), 2px -1px 0 var(--color-main-v2), -1px 3px 0 var(--color-main-v2), 2px 2px 0 var(--color-main-v2);
